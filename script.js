@@ -47,5 +47,10 @@ async function checkWeather(city) {
 }
 
 searchBtn.addEventListener("click", () => {
-  checkWeather(searchBox.value);
+  const city = searchBox.value.trim(); // Trim whitespace from the input value
+  if (city === "") {
+    alert("Please Enter Valid City Name");
+    return; // Exit the function if the city is empty
+  }
+  checkWeather(city);
 });
